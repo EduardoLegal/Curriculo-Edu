@@ -1,0 +1,364 @@
+#Cabecalho{
+    background-image: url('../Assets/IMG/Fundo_img.jpeg.webp');
+    background-size: cover;
+    max-width: 100%;
+    height: 100vh;
+}
+
+.esquerda,.direita,.cima,.baixo{
+    opacity: 0;
+}
+
+
+
+nav{
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    background-color: #007bff;
+    align-items: center;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; 
+    z-index: 10;
+    
+   
+}
+
+.nav a:focus{
+    background-color: #0063cc;
+    
+}
+
+#nav a{
+    align-content: center;
+    height: 100%;
+
+    
+}
+
+nav a:hover{
+    transition: background-color 0.3s ease ;
+    background-color: #0063cc;
+}
+
+
+
+#nav-menu{
+
+    align-items: center;
+    position: fixed;
+    height: 200px;
+    display: flex;
+    
+    
+    
+}
+
+
+.coluna{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+
+
+
+
+.nav-link-mob{
+    opacity: 0;
+}
+
+#perfil-menu{
+    opacity: 0;
+    border: 5px solid white;
+}
+
+
+
+#Inicio{
+    
+    font-family: 'Share Tech Mono',monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+
+
+
+
+#botaonav{
+    position: fixed;
+    right: 1px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background: none;
+    justify-content: space-between;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-items: end;
+    z-index: 10;
+
+    
+    
+}
+
+
+#botaonav span{
+    display: block;
+    height: 4px;
+    width: 30px;
+    background-color: #03448a;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+#perfil{
+    position: absolute;
+    left: 30px;
+    border: 3px solid #fff
+}
+
+
+
+#Sobre{
+    position: relative;
+    z-index: -1;
+    border-radius: 15px;
+    background-color: #0063cc13;
+    padding-bottom: 25px;
+    
+}
+
+#img-sobre{
+    border-radius: 15px;
+    
+}
+
+#sobre-item{
+    display: flex;
+    align-items:self-start;
+    overflow: hidden;
+
+}
+
+#Certificados{
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    
+}
+
+.img-certificados{
+    position: relative;
+    z-index: 1;
+    border-top: #0063cc solid;
+    border-bottom: #0063cc solid;
+    width: 350px;
+    height: auto;
+    border-radius: 20px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    
+}
+
+.img-certificados:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) ;
+}
+
+
+
+
+/* Ativadores de animação*/
+
+#botaonav.x span:nth-child(1){
+    transform: translatey(10px) rotate(45deg);
+}
+
+#botaonav.x span:nth-child(2){
+    opacity: 0;
+}
+
+#botaonav.x span:nth-child(3){
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+
+.animacao-aparecer-nav{
+    animation: abrir-nav 0.3s forwards;
+}
+    
+.animacao-aparecer-items{
+    animation: aparecer-items 0.3s forwards;
+    animation-delay: 0.5s;
+}
+
+.animacao-fechar-nav{
+    animation: fechar-nav 0.3s forwards;
+    animation-delay: 0.5s;
+}
+
+.animacao-fechar-items{
+    animation: desaparecer-items 0.3s forwards;
+}
+
+.vir-esquerda{
+    animation: aparecer-esquerda 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.vir-direita{
+    animation: aparecer-direita 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.vir-cima{
+    animation: aparecer-cima 0.7s forwards;
+    animation-delay: 0.5s;
+}
+
+.vir-baixo{
+    animation: aparecer-baixo 0.7s forwards;
+    animation-delay: 0.5s;
+}
+
+/*Campo de animações*/
+@media (max-width: 992px) {
+    #nav-bar{
+        animation: desaparecer-nav 0.3s forwards;
+    }
+    
+}
+
+@media (min-width:992px) {
+    #nav-bar{
+        animation: aparecer-nav 0.3s forwards;
+    }
+    
+    
+    
+}
+
+@keyframes aparecer-nav {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        z-index: 10;
+    }
+    
+}
+
+@keyframes desaparecer-nav {
+    from{
+        height: 50px;
+        opacity: 1;
+
+    }
+    to{
+        height: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+}
+
+@keyframes abrir-nav {
+    from{
+        height: 0px;
+    }
+    to{
+        height: 200px;
+    }
+    
+}
+
+@keyframes fechar-nav {
+    from{
+        height: 200px;
+    }
+    to{
+        height: 0px;
+    }
+    
+}
+
+@keyframes aparecer-items {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes desaparecer-items {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+    
+}
+
+@keyframes aparecer-esquerda {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    60%{
+        opacity: 1;
+        transform: translateX(25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes aparecer-direita {
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    60%{
+        opacity: 1;
+        transform: translateX(-25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes aparecer-cima {
+    from{
+        opacity: 0;
+        transform: translatey(-100px) ;
+        
+    }
+    60%{
+        opacity: 1;
+        transform: translatey(25px) ; 
+       
+    }
+    100%{
+        opacity: 1;
+        transform: translatey(0) ;
+    }
+    
+}
